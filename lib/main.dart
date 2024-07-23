@@ -4,11 +4,11 @@ import 'package:islami/home/quran_tab/chapter_details_screen.dart';
 import 'home/home_screen.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const MyAppp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class MyAppp extends StatelessWidget {
+  const MyAppp({super.key});
 
   // This widget is the root of your application.
   @override
