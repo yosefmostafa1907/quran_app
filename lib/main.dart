@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:islami/home/ahadeth_tab/hadeth_details/hadeth_details_screen.dart';
 import 'package:islami/home/quran_tab/chapter_details_screen.dart';
 
 import 'home/home_screen.dart';
@@ -71,7 +72,8 @@ class MyAppp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       routes: {
         HomeScreen.routName: (context) => HomeScreen(),
-        ChapterDetailsScreen.routname: (context) => ChapterDetailsScreen()
+        ChapterDetailsScreen.routname: (context) => ChapterDetailsScreen(),
+        HadethDetailsScreen.routName: (context) => HadethDetailsScreen(),
       },
       initialRoute: HomeScreen.routName,
     );
