@@ -29,7 +29,9 @@ class _HomeScreenState extends State<HomeScreen> {
       decoration: BoxDecoration(
         image: DecorationImage(
             fit: BoxFit.cover,
-            image: AssetImage('assets/images/main_background.png')),
+            image: AssetImage(ThemeMode == ThemeMode.light
+                ? 'assets/images/main_background.png'
+                : 'assets/images/main_bg_dark.png')),
       ),
       child: Scaffold(
           //امااخد object من ال theme
@@ -42,28 +44,28 @@ class _HomeScreenState extends State<HomeScreen> {
               currentindex = index;
               setState(() {});
             },
-            backgroundColor: Color(0xFFB7935F),
+            backgroundColor: Theme.of(context).primaryColor,
             items: [
               BottomNavigationBarItem(
-                  backgroundColor: Color(0xFFB7935F),
+                  backgroundColor: Theme.of(context).primaryColor,
                   icon: ImageIcon(AssetImage('assets/images/quran_ic.png')),
                   label: 'quran'),
               BottomNavigationBarItem(
-                  backgroundColor: Color(0xFFB7935F),
+                  backgroundColor: Theme.of(context).primaryColor,
                   icon: ImageIcon(AssetImage('assets/images/ahadeth_ic.png')),
-                  label: ''),
+                  label: 'ahadeth'),
               BottomNavigationBarItem(
-                  backgroundColor: Color(0xFFB7935F),
+                  backgroundColor: Theme.of(context).primaryColor,
                   icon: ImageIcon(AssetImage('assets/images/sebha_ic.png')),
-                  label: ''),
+                  label: 'sebha'),
               BottomNavigationBarItem(
-                  backgroundColor: Color(0xFFB7935F),
+                  backgroundColor: Theme.of(context).primaryColor,
                   icon: ImageIcon(AssetImage('assets/images/radio_ic.png')),
-                  label: ''),
+                  label: 'radio'),
               BottomNavigationBarItem(
-                  backgroundColor: Color(0xFFB7935F),
+                  backgroundColor: Theme.of(context).primaryColor,
                   icon: Icon(Icons.settings),
-                  label: ''),
+                  label: 'setting'),
             ],
           ),
           body: tabs[currentindex]),
