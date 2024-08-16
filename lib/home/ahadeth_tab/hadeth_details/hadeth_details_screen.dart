@@ -11,7 +11,9 @@ class HadethDetailsScreen extends StatelessWidget {
       decoration: BoxDecoration(
         image: DecorationImage(
             fit: BoxFit.cover,
-            image: AssetImage('assets/images/main_background.png')),
+            image: AssetImage(ThemeMode == ThemeMode.light
+                ? 'assets/images/main_background.png'
+                : 'assets/images/main_bg_dark.png')),
       ),
       child: Scaffold(
         appBar: AppBar(
@@ -21,20 +23,14 @@ class HadethDetailsScreen extends StatelessWidget {
           height: double.infinity,
           child: Card(
             margin: EdgeInsets.all(18),
-            shape:
-                RoundedRectangleBorder(borderRadius: BorderRadius.circular(36)),
+            color: Theme.of(context).cardTheme.color,
             child: Container(
               padding: EdgeInsets.all(18),
               child: SingleChildScrollView(
-                child: Text(
-                  args.content,
-                  textAlign: TextAlign.center,
-                  textDirection: TextDirection.rtl,
-                  style: TextStyle(
-                    fontSize: 22,
-                    color: Colors.black,
-                  ),
-                ),
+                child: Text(args.content,
+                    textAlign: TextAlign.center,
+                    textDirection: TextDirection.rtl,
+                    style: Theme.of(context).textTheme.displaySmall),
               ),
             ),
           ),
